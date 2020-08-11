@@ -5,7 +5,7 @@ func! s:TranslateForCursor()
 endfunc
 func! s:TranslateForVisual()
 	normal! gv"ay
-	let s:res = trim(system("python3 " . s:path . " " . @a))
+	let s:res = trim(system("python3 " . s:path . " \"" . @a . "\""))
 	echom s:res
 endfunc
 
