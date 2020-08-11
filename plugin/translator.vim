@@ -8,3 +8,6 @@ func! TranslateForVisual()
 	let s:res = trim(system("python3 " . s:path . " " . @a))
 	echom s:res
 endfunc
+
+command! gtc call TranslateForCursor()
+command! gtv call TranslateForVisual()
