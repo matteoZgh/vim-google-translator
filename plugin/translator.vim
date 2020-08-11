@@ -1,9 +1,9 @@
 let s:path = expand('<sfile>:p:h') . "/translator.py"
-func! TranslateForCursor()
+func! s:TranslateForCursor()
 	let s:res = trim(system("python3 " . s:path . " " . expand("<cword>")))
 	echom s:res
 endfunc
-func! TranslateForVisual()
+func! s:TranslateForVisual()
 	normal! gv"ay
 	let s:res = trim(system("python3 " . s:path . " " . @a))
 	echom s:res
