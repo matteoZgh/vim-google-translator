@@ -9,5 +9,5 @@ func! TranslateForVisual()
 	echom s:res
 endfunc
 
-command! gtc call TranslateForCursor()
-command! gtv call TranslateForVisual()
+command! Gtc call <SID>TranslateForCursor()
+command! Gtv call <SID>TranslateForVisual()
