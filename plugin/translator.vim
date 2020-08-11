@@ -1,8 +1,10 @@
 let s:path = expand('<sfile>:p:h') . "/translator.py"
 func! TranslateForCursor()
-	:echo system("python3 " . s:path . " " . expand("<cword>"))
+	let s:res = trim(system("python3 " . s:path . " " . expand("<cword>")))
+	echom s:res
 endfunc
 func! TranslateForVisual()
 	normal! gv"ay
-	:echo system("python3 " . s:path . " " . @a)
+	let s:res = trim(system("python3 " . s:path . " " . @a))
+	echom s:res
 endfunc
